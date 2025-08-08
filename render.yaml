@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: inventario-stock
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn inventario_app.app:app
+    plan: free
+    envVars:
+      - key: DATABASE_URL
+        value: postgresql://inventario_database_m333_user:vxlkSiV47hKw9Si1iITu9KWTo8V3Qbpw@dpg-d2ablladbo4c73b6j1eg-a/inventario_database_m333
